@@ -11,6 +11,7 @@
 | [VM_SETUP.md](VM_SETUP.md) | M5 Mac에서 Ubuntu VM을 만들고 SSH로 넘기는 절차 |
 | [BRANCHES_AND_COMMITS.md](BRANCHES_AND_COMMITS.md) | 기준 브랜치 판단 근거, 병합 내역, 담당 원본 커밋 |
 | [TODO.md](TODO.md) | 앞으로 진행할 체크리스트 |
+| [RESUME_PROMPT.md](RESUME_PROMPT.md) | SSH 실행이 가능한 개발 세션용 인계 내용 |
 
 ## 저장소와 환경
 
@@ -20,7 +21,7 @@
 - 문서 브랜치: `docs/porting-session`
 - 사용자 환경: MacBook Pro M5 / RAM 16 GB / UTM 설치·실행 완료
 - VM 구성: ARM64 Ubuntu Server 24.04.3 LTS / 4 vCPU / RAM 6 GiB / 시스템 디스크 128 GiB
-- Ubuntu 설치·첫 부팅·yeon 로그인 완료. 현재 세션의 네트워크 권한 때문에 SSH 검증 대기 중.
+- Ubuntu 설치·첫 부팅·yeon 로그인 및 사용자 Mac의 SSH 접속 완료. 현재 ChatGPT 세션의 직접 SSH 실행은 차단되어 있다.
 - VM의 ARM 호환성은 코드 검토에 따른 초기 선택이며, 빌드·부팅·pxt4 실검증 결과는 아직 없다.
 
 ## 기록 원칙
