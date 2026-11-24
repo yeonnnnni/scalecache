@@ -1,44 +1,35 @@
-# ScaleCache 포팅 작업 문서
+# ScaleCache 포팅 문서
 
-이 폴더는 이정연의 ScaleCache Linux 6.6.8 → 7.2.8 포팅 작업 기록이다.
-환경 준비, 기준 브랜치 판단, 변경 내용, 실행 결과, 남은 일을 Markdown으로 기록한다.
+이 폴더에서 현재 상태, 작업 기준, 필요한 사용자 조작, 다음 작업을 확인한다.
+대상은 이정연 담당 `cc-filemap-update`·`cc-filemap-lookup`의 Linux 6.6.8 → 7.2.8 포팅이다.
 
-## 작업 범위
+## 먼저 볼 문서
 
-- 담당: `cc-filemap-update`, `cc-filemap-lookup`
-- 팀 원본: https://github.com/MoonSunMoor/scalecache
-- 개인 포크: https://github.com/yeonnnnni/scalecache
-- 작업 환경: MacBook Pro M5, RAM 16 GB
-- VM 프로그램: UTM 설치·실행 완료(사용자 확인)
-- 목표: 수정 커널 빌드·부팅, 모듈 로드·제거, mount·umount, 기본 I/O, 제공 벤치마크 검증
-
-## 현재 확인한 기준
-
-- 원본과 개인 포크의 14개 브랜치 이름 및 HEAD SHA가 일치한다(2026-11-24 확인).
-- 기본 브랜치는 `sc-6.6.8-integ`이다. 기본 브랜치를 대상 커널로 오인하지 않는다.
-- 7.2.8 통합 브랜치: `sc-7.2.8-integ`
-- 확인한 통합 HEAD: `d6d55a2b2f8d91252f3f7b6d8a32a79250e33caf`
-- 해당 브랜치 Makefile: `VERSION=7`, `PATCHLEVEL=2`, `SUBLEVEL=8`
-- 실제 포팅 시작 전 병합 이력과 선행 의존성을 추가 확인한다.
-
-## 기록 방식
-
-- 사용자가 알아야 할 결정·진행 상태·미해결 문제를 이 폴더에 기록한다.
-- 성공한 실행과 예정 작업을 구분한다. 빌드나 실행을 하지 않았다면 미실행으로 적는다.
-- 브랜치와 커밋 SHA, 설정 변경 이유, 테스트 결과를 함께 남긴다.
-- 담당 코드 변경과 문서 변경은 의미 있는 단위로 커밋한다.
-- 이 문서 브랜치는 GitHub 쓰기 권한을 실제 커밋으로 확인하기 위해 생성했다.
-
-## 현재 실행 상태
-
-| 항목 | 상태 |
+| 문서 | 내용 |
 | --- | --- |
-| 개인 포크 조회·계정 확인 | 완료 |
-| 원본·포크 브랜치 비교 | 완료 |
-| 대상 Makefile 버전 확인 | 완료: 7.2.8 |
-| GitHub 문서 커밋 | 이 파일의 커밋으로 확인 |
-| VM CPU 구조와 설치 이미지 선택 | 검토 중 |
-| Linux VM 생성·설치·SSH | 미실행 |
-| 담당 코드 수정·커널 빌드·동작 테스트 | 미실행 |
+| [STATUS.md](STATUS.md) | 완료한 일, 현재 막힌 부분, 다음 행동 |
+| [VM_SETUP.md](VM_SETUP.md) | M5 Mac에서 Ubuntu VM을 만들고 SSH로 넘기는 절차 |
+| [BRANCHES_AND_COMMITS.md](BRANCHES_AND_COMMITS.md) | 기준 브랜치 판단 근거, 병합 내역, 담당 원본 커밋 |
+| [TODO.md](TODO.md) | 앞으로 진행할 체크리스트 |
 
-비밀번호, 토큰, SSH 개인키, 기기 일련번호는 이 문서에 저장하지 않는다.
+## 저장소와 환경
+
+- 팀 저장소: [MoonSunMoor/scalecache](https://github.com/MoonSunMoor/scalecache)
+- 개인 포크: [yeonnnnni/scalecache](https://github.com/yeonnnnni/scalecache)
+- 포팅 기준: `sc-7.2.8-integ` @ `d6d55a2b2f8d91252f3f7b6d8a32a79250e33caf`
+- 문서 브랜치: `docs/porting-session`
+- 사용자 환경: MacBook Pro M5 / RAM 16 GB / UTM 설치·실행 완료
+- VM 계획: ARM64 Ubuntu Server 24.04 LTS / 4 vCPU / RAM 6 GiB / 시스템 디스크 128 GiB
+- VM의 ARM 호환성은 코드 검토에 따른 초기 선택이며, 빌드·부팅·pxt4 실검증 결과는 아직 없다.
+
+## 기록 원칙
+
+- 성공한 확인과 예정 작업을 분리하고, 미실행한 검증을 통과했다고 적지 않는다.
+- 코드와 설정 변경에는 이유, 기준 SHA, 확인 결과를 남긴다.
+- 담당 커널 변경은 포팅 브랜치에 커밋하고, 세션 문서는 이 폴더에 유지한다.
+- 이 문서들은 개인 포크에도 커밋해 보관한다. 코드 PR에 문서 브랜치를 통째로 병합할 필요는 없다.
+- 인증 정보와 기기 일련번호는 저장하지 않는다.
+
+기존 루트의 `ScaleCache_porting_TODO.md`는 최초 계획이며, 진행 상태는 이 폴더의 문서를 우선한다.
+
+최종 업데이트: 2026-11-24.
