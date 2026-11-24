@@ -19,7 +19,8 @@
 - 포팅 기준: `sc-7.2.8-integ` @ `d6d55a2b2f8d91252f3f7b6d8a32a79250e33caf`
 - 문서 브랜치: `docs/porting-session`
 - 사용자 환경: MacBook Pro M5 / RAM 16 GB / UTM 설치·실행 완료
-- VM 구성: ARM64 Ubuntu Server 24.04 LTS / 4 vCPU / RAM 6 GiB / 시스템 디스크 128 GiB
+- VM 구성: ARM64 Ubuntu Server 24.04.3 LTS / 4 vCPU / RAM 6 GiB / 시스템 디스크 128 GiB
+- Ubuntu 설치·첫 부팅·yeon 로그인 완료. 현재 세션의 네트워크 권한 때문에 SSH 검증 대기 중.
 - VM의 ARM 호환성은 코드 검토에 따른 초기 선택이며, 빌드·부팅·pxt4 실검증 결과는 아직 없다.
 
 ## 기록 원칙

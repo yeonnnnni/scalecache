@@ -1,6 +1,6 @@
 # M5 Mac: Ubuntu VM 설치 후 SSH로 넘기기
 
-2026-11-25: UTM 직접 조작 연결이 복구되어 VM을 생성하고 Ubuntu 설치를 진행 중이다.
+2026-11-25: UTM 직접 조작으로 VM 생성·Ubuntu 설치·ISO 분리·첫 부팅·yeon 로그인을 완료했다.
 아래는 재설치하거나 직접 조작할 때 참고할 절차이며, 현재 화면은 STATUS.md에 기록한다.
 
 ## 선택한 초기 구성
@@ -126,5 +126,5 @@ Mac 터미널에서 SSH 접속: 성공 / 오류 내용
 - [Ubuntu ARM 이미지 목록](https://cdimage.ubuntu.com/releases/24.04/release/)
 - [Ubuntu OpenSSH 설치 안내](https://documentation.ubuntu.com/server/how-to/security/openssh-server/)
 
-현재 VM 구성·설치 중 DHCP·미러 테스트·파티션·계정 설정은 화면에서 확인했다. 설치 완료·첫 부팅·SSH 접속은 아직 미검증이다.
+현재 VM 구성·DHCP·미러 테스트·파티션·계정 설정과 설치 완료·첫 부팅·로그인은 화면에서 확인했다. SSH 접속은 세션 네트워크 권한 차단으로 아직 미검증이다.
 
