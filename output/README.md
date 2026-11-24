@@ -19,7 +19,7 @@
 - 포팅 기준: `sc-7.2.8-integ` @ `d6d55a2b2f8d91252f3f7b6d8a32a79250e33caf`
 - 문서 브랜치: `docs/porting-session`
 - 사용자 환경: MacBook Pro M5 / RAM 16 GB / UTM 설치·실행 완료
-- VM 계획: ARM64 Ubuntu Server 24.04 LTS / 4 vCPU / RAM 6 GiB / 시스템 디스크 128 GiB
+- VM 구성: ARM64 Ubuntu Server 24.04 LTS / 4 vCPU / RAM 6 GiB / 시스템 디스크 128 GiB
 - VM의 ARM 호환성은 코드 검토에 따른 초기 선택이며, 빌드·부팅·pxt4 실검증 결과는 아직 없다.
 
 ## 기록 원칙
@@ -30,6 +30,9 @@
 - 이 문서들은 개인 포크에도 커밋해 보관한다. 코드 PR에 문서 브랜치를 통째로 병합할 필요는 없다.
 - 인증 정보와 기기 일련번호는 저장하지 않는다.
 
-기존 루트의 `ScaleCache_porting_TODO.md`는 최초 계획이며, 진행 상태는 이 폴더의 문서를 우선한다.
+원본 `ScaleCache_porting_TODO.md`를 종합 체크리스트로 계속 갱신한다. 이 폴더에는 상세 상태와 근거를 함께 남긴다.
 
-최종 업데이트: 2026-11-24.
+PR은 이정연이 직접 생성·제출한다. Codex는 검증·커밋·push와 PR 제목·본문 준비를 맡는다.
+
+최종 업데이트: 2026-11-25.
+
