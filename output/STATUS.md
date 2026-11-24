@@ -1,5 +1,11 @@
 # 현재 상태 — 2026-11-25
 
+## 최신 추가 확인: VM Codex CLI
+
+VS Code Remote-SSH 접속과 `/home/yeon` 폴더 열기는 성공했지만 Codex 패널의 계정 정보를 불러오지 못했다. 이후 VM에 Linux ARM64용 Codex CLI 0.172.0 설치를 완료했다. 사용자 주도로 Mac의 기존 인증 파일을 VM으로 전송했고, SSH 원격 `codex login status`의 `Logged in using ChatGPT` 출력을 확인했다.
+
+새 CLI 세션의 모델 응답·도구 실행·sudo·clone·포팅·빌드는 아직 확인하지 않았다. 기존 ChatGPT 세션의 실행 제한은 그대로다. [RESUME_PROMPT.md](RESUME_PROMPT.md)와 원본 TODO를 VM에 전달해 별도 CLI 세션에서 이어간다. 인증 파일 내용은 기록하지 않는다.
+
 ## 결론
 
 **GitHub 쓰기 권한이 실제 커밋으로 확인되었다. 추가 GitHub 권한 설정은 현재 필요하지 않다.**

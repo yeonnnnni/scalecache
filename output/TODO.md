@@ -25,6 +25,9 @@
 - [x] Ubuntu 설치 완료·ISO 분리·첫 부팅·yeon 로그인 확인
 - [x] 설치 로그에서 OpenSSH 패키지 설치 확인
 - [x] 사용자 Mac에서 OpenSSH 원격 인증·셸 진입 확인
+- [x] VS Code Remote-SSH 연결과 VM 폴더 열기 확인
+- [x] VM에 Codex CLI 0.172.0 설치 및 사용자 원격 명령의 ChatGPT 로그인 상태 확인
+- [ ] VM Codex CLI의 실제 모델 응답·도구 실행 확인
 - [ ] Codex 직접 원격 명령 실행·sudo 권한 확인
 - [ ] 필요한 경우 SSH 인증 설정
 
